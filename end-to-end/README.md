@@ -92,9 +92,6 @@ the answer was wrong or a false refusal).
 
 ### Results
 
-*Not yet filled in. Run the commands above on your machine and paste the table here, then
-set the defaults in `config.py` from it.*
-
 | chunk size | k | MMR | chunks | evidence intact | context hit | page hit | avg context chars | missed |
 |---|---|---|---|---|---|---|---|---|
 | 500 | 3 | off | 101 | 10/10 | 4/10 | 8/10 | 1162 | q01, q03, q06, q07, q08, q09 |
