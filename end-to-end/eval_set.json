@@ -1,0 +1,347 @@
+{
+  "note": "gold_pages are 1-indexed printed page numbers; PyPDF 'page' metadata is 0-indexed (subtract 1). must_contain: every inner list needs at least one alternative present in the answer (case-insensitive).",
+  "refusal": "I don't know based on the provided documents.",
+  "questions": [
+    {
+      "id": "q01",
+      "type": "answerable",
+      "tags": [
+        "abstract"
+      ],
+      "question": "Which two challenge datasets does the study use?",
+      "expected_answer": "HECKTOR and AutoPET.",
+      "must_contain": [
+        [
+          "hecktor"
+        ],
+        [
+          "autopet"
+        ]
+      ],
+      "gold_pages": [
+        1
+      ],
+      "evidence": [
+        {
+          "page": 1,
+          "text": "datasets from the AutoPET and HECKTOR challenges"
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "answerable",
+      "tags": [
+        "abstract"
+      ],
+      "question": "Which model was the most effective on each dataset?",
+      "expected_answer": "V-Net on HECKTOR and nnU-Net on AutoPET.",
+      "must_contain": [
+        [
+          "v-net"
+        ],
+        [
+          "nnu-net"
+        ]
+      ],
+      "gold_pages": [
+        1
+      ],
+      "evidence": [
+        {
+          "page": 1,
+          "text": "V-Net and nnU-Net models were the most effective for their respective datasets"
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "answerable",
+      "tags": [
+        "numbers"
+      ],
+      "question": "How many images and patients are in the AutoPET dataset, and how many of the images are positive cases?",
+      "expected_answer": "1014 images from 900 patients; 501 positive (513 negative).",
+      "must_contain": [
+        [
+          "1014",
+          "1,014"
+        ],
+        [
+          "900"
+        ],
+        [
+          "501"
+        ]
+      ],
+      "gold_pages": [
+        4
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "text": "1014 images obtained from 900 patients"
+        },
+        {
+          "page": 4,
+          "text": "501 were positive"
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "answerable",
+      "tags": [
+        "numbers"
+      ],
+      "question": "What patch size was used for the patch-based U-Net on AutoPET, and how many samples were taken per image volume?",
+      "expected_answer": "96x96x96 patches, 80 samples per image volume.",
+      "must_contain": [
+        [
+          "96"
+        ],
+        [
+          "80"
+        ]
+      ],
+      "gold_pages": [
+        4
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "text": "80 samples per image volume"
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "answerable",
+      "tags": [
+        "methods"
+      ],
+      "question": "Which loss function, optimizer and learning-rate scheduler were used to train the models?",
+      "expected_answer": "DiceFocalLoss (weighted sum of Dice and Focal loss), Adam optimizer, Cosine Annealing with Warm Restarts.",
+      "must_contain": [
+        [
+          "dicefocal",
+          "dice focal",
+          "dice and focal",
+          "dice loss"
+        ],
+        [
+          "adam"
+        ],
+        [
+          "cosine"
+        ]
+      ],
+      "gold_pages": [
+        5
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "text": "Cosine Annealing with Warm Restarts"
+        },
+        {
+          "page": 5,
+          "text": "DiceFocalLoss"
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "answerable",
+      "tags": [
+        "table"
+      ],
+      "question": "What Dice scores did nnU-Net reach on the AutoPET tumour-only dataset?",
+      "expected_answer": "DSC 0.74 and aggregated DSC 0.84 (Table 1).",
+      "must_contain": [
+        [
+          "0.74"
+        ],
+        [
+          "0.84"
+        ]
+      ],
+      "gold_pages": [
+        5
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "text": "0.84"
+        },
+        {
+          "page": 5,
+          "text": "0.74"
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "answerable",
+      "tags": [
+        "table"
+      ],
+      "question": "What mean aggregated Dice did the authors' V-Net get in the HECKTOR comparison table, and what did the top-ranked team get?",
+      "expected_answer": "V-Net 0.70443; top team NVAUTO 0.78802 (Table 5).",
+      "must_contain": [
+        [
+          "0.70443",
+          "0.7044",
+          "0.704",
+          "0.70"
+        ],
+        [
+          "0.78802",
+          "0.7880",
+          "0.788",
+          "0.79"
+        ]
+      ],
+      "gold_pages": [
+        7
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "text": "0.70443"
+        },
+        {
+          "page": 7,
+          "text": "0.78802"
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "answerable",
+      "tags": [
+        "cross-page"
+      ],
+      "question": "Why did the UNETR transformer model not outperform the convolutional networks, and what could improve it?",
+      "expected_answer": "The limited dataset size hindered the transformer; self-supervised pretraining might help.",
+      "must_contain": [
+        [
+          "pretrain"
+        ],
+        [
+          "limited",
+          "small",
+          "size of the dataset"
+        ]
+      ],
+      "gold_pages": [
+        8,
+        9
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "text": "UNETR model, which is based on the transformer"
+        },
+        {
+          "page": 9,
+          "text": "limited size of the dataset hindered"
+        },
+        {
+          "page": 9,
+          "text": "pretraining approach could improve the UNETR"
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "type": "answerable",
+      "tags": [
+        "cross-page"
+      ],
+      "question": "Which factors do the authors say matter more than the choice of deep network architecture?",
+      "expected_answer": "Data preparation, augmentation and pre/post-processing.",
+      "must_contain": [
+        [
+          "preparation"
+        ],
+        [
+          "augmentation"
+        ]
+      ],
+      "gold_pages": [
+        8,
+        9
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "text": "crucial role of data preparation"
+        },
+        {
+          "page": 9,
+          "text": "more important that the deep architecture itself"
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "type": "answerable",
+      "tags": [
+        "needle"
+      ],
+      "question": "Which computing infrastructure is acknowledged, and what is the grant number?",
+      "expected_answer": "PLGrid HPC infrastructure (ACK Cyfronet AGH), grant PLG/2023/016239.",
+      "must_contain": [
+        [
+          "plg/2023/016239"
+        ]
+      ],
+      "gold_pages": [
+        9
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "text": "PLG/2023/016239"
+        }
+      ]
+    },
+    {
+      "id": "u01",
+      "type": "unanswerable",
+      "tags": [
+        "not-in-paper"
+      ],
+      "question": "Which GPU model was used to train the networks, and how long did training take?",
+      "expected_answer": "I don't know based on the provided documents.",
+      "must_contain": [],
+      "gold_pages": [],
+      "evidence": []
+    },
+    {
+      "id": "u02",
+      "type": "unanswerable",
+      "tags": [
+        "not-in-paper"
+      ],
+      "question": "What was the inference time per patient scan?",
+      "expected_answer": "I don't know based on the provided documents.",
+      "must_contain": [],
+      "gold_pages": [],
+      "evidence": []
+    },
+    {
+      "id": "u03",
+      "type": "unanswerable",
+      "tags": [
+        "not-in-paper"
+      ],
+      "question": "What Dice score did the Swin UNETR model achieve?",
+      "expected_answer": "I don't know based on the provided documents.",
+      "must_contain": [],
+      "gold_pages": [],
+      "evidence": []
+    }
+  ]
+}

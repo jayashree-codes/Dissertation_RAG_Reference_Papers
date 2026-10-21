@@ -1,0 +1,15 @@
+langchain-core>=0.3
+langchain-text-splitters>=0.3
+langchain-chroma>=0.2
+chromadb>=1.0
+langchain-huggingface>=0.1
+sentence-transformers>=3.0
+pypdf>=4.0
+python-dotenv>=1.0
+
+# Pick the LLM you use (see config.LLM_PROVIDER):
+langchain-ollama>=0.2        # free, local (needs the Ollama app running)
+langchain-anthropic>=0.3     # Claude via API (needs ANTHROPIC_API_KEY in .env)
+
+# Development
+pytest>=8.0
